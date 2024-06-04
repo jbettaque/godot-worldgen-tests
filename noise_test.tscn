@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceiverpnwe07t"]
+
+[ext_resource type="Script" path="res://Scripts/noise_test.gd" id="1_2l5xs"]
+[ext_resource type="Script" path="res://Scripts/camera_controller.gd" id="2_hcset"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2l5xs")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 212.0
+offset_bottom = 259.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="TextEditL1" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 17.0
+offset_right = 180.0
+offset_bottom = 51.0
+placeholder_text = "Level 1"
+
+[node name="TextEditL2" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 54.0
+offset_right = 180.0
+offset_bottom = 88.0
+placeholder_text = "Level 1"
+
+[node name="TextEditL3" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 92.0
+offset_right = 180.0
+offset_bottom = 126.0
+placeholder_text = "Level 1"
+
+[node name="TextEditWaterLevel" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 131.0
+offset_right = 180.0
+offset_bottom = 165.0
+placeholder_text = "Level 1"
+
+[node name="Button" type="Button" parent="Panel"]
+offset_left = 34.0
+offset_top = 183.0
+offset_right = 131.0
+offset_bottom = 218.0
+text = "Regenerate"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_hcset")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
